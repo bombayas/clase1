@@ -1,9 +1,9 @@
-//manejo de punteros
+//Manejo de punteros
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
 int medida (char aux[]){
-    int l;
+    int l=0;
     while(aux[l]!='\0'){
                         l++;
     }
@@ -12,11 +12,13 @@ int medida (char aux[]){
 int main(){
     char *lista[5];
     int salir;
+    int nveces;
     char aux[15];  // aux==vector de 15 letras donde guardas el nombre de tu amigo
-    int l;
     int cont;
+    char *pauxiliar;
+    int l;
     for(cont=0;cont<5;cont++){
-                              printf("\nNombre amigo %1; ",cont);
+                              printf("\nNombre amigo %i; ",cont);
                               scanf("%s",aux);
                               l=medida(aux);
                               printf("%i\n",l);
@@ -26,7 +28,19 @@ int main(){
     for(cont=0;cont<5;cont++){
                               printf("\n%s",lista[cont]);
     }
-    
+    //Ordenamiento
+    for(cont=0;cont<4;cont++){
+        if(*lista[cont]>*lista[cont+1]){
+                                        pauxiliar=lista[cont];
+                                        lista[cont]=lista[cont+1];
+                                        lista[cont+1]=pauxiliar;
+        }
+    }
+    //Despues de ordenarlo
+    printf ("\nlista ordenada: ");
+    for(cont=0;cont<5;cont++){
+                              printf("\n%s",lista[cont]);
+    }
     printf("\ntoca cualquier tecla:");  
     scanf("%i",&salir);
 }
