@@ -1,0 +1,32 @@
+#include<iostream>
+int main;int ni,n2,n3; 
+    int salir;
+    int mayor;
+    std::cout<<"escribe el 1 num";
+    std::cin>>n1;
+    std::cout<<"escribe el 2 num";
+    std::cin>>n2;
+    std::cout<<"escribe el 3 num";
+    std::cin>>n3;
+    if(n1>n2){
+              if(n1>n3){
+                mayor=n1;      
+            }else{
+                   mayor=n2;  
+             }
+    }         
+    else{
+         if (n2>n3){
+                    mayor=n2;
+         }
+         else{
+              mayor=n3; 
+         }
+    }
+            std::cout<<"escribe el mayor es"<<mayor;
+            std::cout<<"toca cualquier tecla: ";
+            std::>>salir;
+            return 0;
+            
+}
+     
